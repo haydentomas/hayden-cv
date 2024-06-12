@@ -35,5 +35,5 @@ const postsCollection = defineCollection({
  });
 export const collections = {
   posts: postsCollection,
-  projects: projectCollection
+  projectPosts: projectCollection
 };
