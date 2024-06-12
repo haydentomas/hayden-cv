@@ -2,9 +2,10 @@
 import BaseLayout from "./BaseLayout.astro";
 import { Picture } from "astro:assets";
 const { frontmatter } = Astro.props;
+const permalink = `${Astro.url.href}`;
 ---
 
-<BaseLayout>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} permalink={permalink}>
   <main class="p-4">
 
     <h1 class="">{frontmatter.title}</h1>
