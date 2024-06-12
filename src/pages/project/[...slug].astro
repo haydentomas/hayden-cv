@@ -6,7 +6,7 @@ import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
 
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('projectPosts');
+  const blogEntries = await getCollection('posts');
   return blogEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
@@ -18,7 +18,7 @@ const { Content } = await entry.render();
 
 // Assuming you have a `posts` collection
 // Fetching posts and sorting them by pubDate in descending order
-const allPosts = (await getCollection('projectPosts'))
+const allPosts = (await getCollection('posts'))
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 
 
