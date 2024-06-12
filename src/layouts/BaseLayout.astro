@@ -1,10 +1,11 @@
-<!-- /src/layouts/baselayout.astro -->
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 // Accessing the passed prop
 const { pageTitle = 'Default Title' } = Astro.props; // Default title if none is passed
+import "@fontsource/cabin";
+import "@fontsource/merriweather";
 ---
 <html lang="en">
   <head>
