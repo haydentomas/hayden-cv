@@ -18,7 +18,7 @@ type PaginationResult = {
 type PaginateFunction = (items: any[], config: { pageSize: number }) => Promise<PaginationResult>;
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-    const pages = await getCollection('posts', ({ data }) => {
+    const pages = await getCollection('projectPosts', ({ data }) => {
         return data.draft !== true; // Filter out drafts if necessary
     });
     return paginate(pages, { pageSize: 3}); // Adjust pageSize as needed
